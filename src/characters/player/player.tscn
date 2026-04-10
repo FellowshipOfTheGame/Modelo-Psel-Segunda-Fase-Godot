@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://d2uylj7k3aluj"]
+
+[ext_resource type="Script" uid="uid://crbmg4abvc37d" path="res://src/characters/player/player.gd" id="1_4anbu"]
+[ext_resource type="Texture2D" uid="uid://b147qeyjamgn3" path="res://assets/Player.png" id="2_7nd6e"]
+[ext_resource type="AudioStream" uid="uid://cxoe3gh2v3yge" path="res://assets/lumora_studios-pixel-jump-319167-editado.mp3" id="3_5c1al"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rxibo"]
+radius = 22.0
+height = 118.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1942949917 groups=["player"]]
+script = ExtResource("1_4anbu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1964633258]
+position = Vector2(3.5762787e-07, 1.013279e-06)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_7nd6e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=824825518]
+shape = SubResource("CapsuleShape2D_rxibo")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2018277922]
+position_smoothing_enabled = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1646098480 groups=["player"]]
+stream = ExtResource("3_5c1al")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=273969453]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=899719015]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer" unique_id=2134654833]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "life"

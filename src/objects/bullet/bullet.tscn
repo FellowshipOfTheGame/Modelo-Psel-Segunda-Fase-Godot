@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c4ton4qpqup7c"]
+
+[ext_resource type="Script" uid="uid://cwc2g6in1d0kf" path="res://src/objects/bullet/bullet.gd" id="1_hyah1"]
+[ext_resource type="AudioStream" uid="uid://bjotwc0xvoy18" path="res://assets/freesound_community-bow-release-bow-and-arrow-4-101936-editado.mp3" id="2_flba8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yqwx2"]
+size = Vector2(20, 8)
+
+[sub_resource type="Gradient" id="Gradient_m0txf"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 0, 0.26666668, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dgxu1"]
+gradient = SubResource("Gradient_m0txf")
+
+[node name="Area2D" type="Area2D" unique_id=509936973]
+script = ExtResource("1_hyah1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=153903815]
+shape = SubResource("RectangleShape2D_yqwx2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1439907532]
+position = Vector2(0, 2.9802322e-08)
+scale = Vector2(0.3125, 0.14062499)
+texture = SubResource("GradientTexture2D_dgxu1")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=251540176]
+stream = ExtResource("2_flba8")
+volume_db = 10.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

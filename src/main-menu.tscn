@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://j0us7wi44d7b"]
+
+[ext_resource type="Script" uid="uid://m0v2vepuh6ey" path="res://src/main_menu.gd" id="1_wywc0"]
+
+[node name="Control" type="Control" unique_id=1104187686]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wywc0")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=2045163544]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=890388725]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/VBoxContainer" unique_id=651966348]
+layout_mode = 2
+theme_override_constants/margin_bottom = 100
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/MarginContainer" unique_id=1557923583]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Joquinho Muito Show de Bola"
+
+[node name="Play" type="Button" parent="CenterContainer/VBoxContainer" unique_id=218159149]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "Play"
+
+[node name="Quit" type="Button" parent="CenterContainer/VBoxContainer" unique_id=170528613]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "Quit
+"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
