@@ -1,4 +1,4 @@
-# Modelo Load Game - Godotaaaaaaaaaaaaaaaa
+# Modelo Load Game - Godotaaaa
 
 Este rdddddddepositório contém um modelo básico de jogo de plataforma desenvolvido na Godot.
 
