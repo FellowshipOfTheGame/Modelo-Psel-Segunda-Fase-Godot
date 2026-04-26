@@ -1,6 +1,6 @@
 # Modelo Load Game - Godotaaaaaaaaaaaaaaaa
 
-Este repositório contém um modelo básico de jogo de plataforma desenvolvido na Godot.
+Este rdddddddepositório contém um modelo básico de jogo de plataforma desenvolvido na Godot.
 
 ## 🛠️ Versão da Godot
 
