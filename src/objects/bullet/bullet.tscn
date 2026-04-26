@@ -13,7 +13,7 @@ colors = PackedColorArray(1, 0, 0.26666668, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_dgxu1"]
 gradient = SubResource("Gradient_m0txf")
 
-[node name="Area2D" type="Area2D" unique_id=509936973]
+[node name="Bullet" type="Area2D" unique_id=509936973]
 script = ExtResource("1_hyah1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=153903815]

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dau6jlr51wqby"]
 
-[ext_resource type="Script" uid="uid://r15m8fvnm1uh" path="res://src/level/flag.gd" id="1_6c8sm"]
-[ext_resource type="PackedScene" uid="uid://d2uylj7k3aluj" path="res://src/characters/player/player.tscn" id="1_wflpd"]
-[ext_resource type="PackedScene" uid="uid://bms5yvt8847sf" path="res://src/characters/mob/mob.tscn" id="2_y7lyp"]
+[ext_resource type="Script" uid="uid://r15m8fvnm1uh" path="res://src/level/flag.gd" id="1_af42n"]
+[ext_resource type="PackedScene" uid="uid://d2uylj7k3aluj" path="res://src/characters/player/player.tscn" id="2_mpbj7"]
+[ext_resource type="PackedScene" uid="uid://bms5yvt8847sf" path="res://src/characters/enemy/enemy.tscn" id="3_em31m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6c8sm"]
 size = Vector2(40, 200)
@@ -23,36 +23,36 @@ colors = PackedColorArray(0, 0.29803923, 0, 1, 0, 0.3019608, 0, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_y7lyp"]
 gradient = SubResource("Gradient_wflpd")
 
-[node name="Main" type="Node2D" unique_id=1068028932]
+[node name="Level" type="Node2D" unique_id=1068028932]
 
-[node name="Area2D" type="Area2D" parent="." unique_id=856875790]
-script = ExtResource("1_6c8sm")
+[node name="Flag" type="Area2D" parent="." unique_id=856875790]
+script = ExtResource("1_af42n")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=307219073]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flag" unique_id=307219073]
 position = Vector2(1813, 415)
 shape = SubResource("RectangleShape2D_6c8sm")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1602328335]
+[node name="Sprite2D" type="Sprite2D" parent="Flag" unique_id=1602328335]
 position = Vector2(1812.5, 415)
 scale = Vector2(0.60937405, 3.125)
 texture = SubResource("GradientTexture2D_rwyyx")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=696972884]
+[node name="Floor" type="StaticBody2D" parent="." unique_id=696972884]
 position = Vector2(832, 447)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=788536617]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=788536617]
 position = Vector2(80, 121)
 shape = SubResource("RectangleShape2D_y7lyp")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1011883095]
+[node name="Sprite2D" type="Sprite2D" parent="Floor" unique_id=1011883095]
 position = Vector2(73, 118)
 scale = Vector2(46.109375, 1.578125)
 texture = SubResource("GradientTexture2D_y7lyp")
 
-[node name="Player" parent="." unique_id=1942949917 instance=ExtResource("1_wflpd")]
+[node name="Player" parent="." unique_id=1942949917 instance=ExtResource("2_mpbj7")]
 position = Vector2(576, 328)
 
-[node name="CharacterBody2D" parent="." unique_id=631604047 instance=ExtResource("2_y7lyp")]
+[node name="Enemy" parent="." unique_id=631604047 instance=ExtResource("3_em31m")]
 position = Vector2(1010, 339)
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Flag" to="Flag" method="_on_body_entered"]

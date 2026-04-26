@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://bms5yvt8847sf"]
 
-[ext_resource type="Script" uid="uid://b7d03mmxjdfa5" path="res://src/characters/mob/mob.gd" id="1_rtr88"]
+[ext_resource type="Script" uid="uid://b7d03mmxjdfa5" path="res://src/characters/enemy/enemy.gd" id="1_rtr88"]
 [ext_resource type="Texture2D" uid="uid://b147qeyjamgn3" path="res://assets/Player.png" id="1_w6ndk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rtr88"]
 radius = 25.0
 height = 114.0
 
-[node name="CharacterBody2D" type="RigidBody2D" unique_id=1592149035]
+[node name="Enemy" type="RigidBody2D" unique_id=1592149035]
 script = ExtResource("1_rtr88")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1914250153]
@@ -20,10 +20,10 @@ texture = ExtResource("1_w6ndk")
 
 [node name="Timer" type="Timer" parent="." unique_id=2107655746]
 
-[node name="Marker2DR" type="Marker2D" parent="." unique_id=1212974408]
+[node name="RightSide" type="Marker2D" parent="." unique_id=1212974408]
 position = Vector2(20, -15)
 
-[node name="Marker2DL" type="Marker2D" parent="." unique_id=1741806918]
+[node name="LeftSide" type="Marker2D" parent="." unique_id=1741806918]
 position = Vector2(-23, -13)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

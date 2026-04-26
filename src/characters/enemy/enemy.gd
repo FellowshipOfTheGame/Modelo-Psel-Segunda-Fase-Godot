@@ -31,14 +31,18 @@ func _physics_process(_delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	var new_bullet = bullet.instantiate() # instancia um packed_scene
+
 	# aqui nós acessamos a posição do player através do autoload
 	if Game.player_pos.x - global_position.x > 0:
 		# "position" seria a posição relativa a origem do objeto, para acessar a
-		# posição global na cena precisamos usar global_position
-		new_bullet.global_position = $Marker2DR.global_position
+		# posição global na cena precisamos usar global_position.
+		#
+		# Aqui estamos setando a posição da bala como sendo a mesma posição do
+		# nó marcador "RightSide".
+		new_bullet.global_position = $RightSide.global_position
 		new_bullet.direction = Vector2.RIGHT
 	else:
-		new_bullet.global_position = $Marker2DL.global_position
+		new_bullet.global_position = $LeftSide.global_position
 		new_bullet.direction = Vector2.LEFT
 
 	# adcionamos a instancia na arvore de nós como filho do node raiz

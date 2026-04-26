@@ -32,14 +32,14 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "Joquinho Muito Show de Bola"
 
-[node name="Play" type="Button" parent="CenterContainer/VBoxContainer" unique_id=218159149]
+[node name="PlayBtn" type="Button" parent="CenterContainer/VBoxContainer" unique_id=218159149]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 40
 text = "Play"
 
-[node name="Quit" type="Button" parent="CenterContainer/VBoxContainer" unique_id=170528613]
+[node name="QuitBtn" type="Button" parent="CenterContainer/VBoxContainer" unique_id=170528613]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -47,5 +47,5 @@ theme_override_font_sizes/font_size = 40
 text = "Quit
 "
 
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/PlayBtn" to="." method="_on_play_btn_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/QuitBtn" to="." method="_on_quit_btn_pressed"]
