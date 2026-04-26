@@ -9,7 +9,6 @@ enum State {
 
 var curr_state = State.searching
 
-@onready var gun_hand = $Marker2DL
 @onready var timer = $Timer
 @onready var bullet = preload("res://src/objects/bullet/bullet.tscn")
 
